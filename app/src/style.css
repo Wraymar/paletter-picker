@@ -1,0 +1,31 @@
+/* Entire Document */
+body {
+  display: flex;
+  justify-content: center;
+  background-color: grey;
+}
+
+.app {
+  border: 2px solid black;
+  border-radius: 15px;
+  padding: 20px;
+  background-color: rgb(113, 153, 162);
+}
+
+/* Header */
+
+/* Form Container */
+
+/* Colors */
+.colors {
+  display: flex;
+  justify-content: center;
+}
+/* Temperature */
+
+/* Create Palette button */
+.button {
+  display: flex;
+  justify-content: center;
+}
+/* Palette List */

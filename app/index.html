@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="src/style.css" />
+    <title>Palette Picker</title>
+  </head>
+  <body>
+    <div class="app">
+
+      <!-- Header -->
+      <header>
+        <div class="header-container">
+          <h1>Add Your Palette</h1>
+          <p>Create your custom palette below</p>
+        </div>
+      </header>
+
+      <main>
+        <!-- Form -->
+        <form aria-labelledby="palette-form" class="form-container">
+
+          <!-- palette title -->
+          <label for="title">Palette Title:</label>
+          <input type="text" id="title" name="title" placeholder="title name" />
+          <br />
+
+          <!-- colors -->
+          <div>
+          
+          <div class="colors">
+          <label for="color1">Color #1</label>
+          <input type="color" id="color1" name="color1" />
+          <br />
+          </div>
+          
+          <div class="colors">
+          <label for="color2">Color #2</label>
+          <input type="color" id="color2" name="color2" />
+          <br />
+          </div>
+          
+          <div class="colors">
+          <label for="color3">Color #3</label>
+          <input type="color" id="color3" name="color3" />
+          </div>
+          </div>
+
+          <!-- temperature -->
+          <fieldset>
+            <legend>Temperature</legend>
+            <input type="radio" id="warm" name="temperature" />
+            <label for="warm">Warm</label>
+
+            <input type="radio" id="neutral" name="temperature" checked />
+            <label for="neutral">Neutral</label>
+
+            <input type="radio" id="cool" name="temperature" />
+            <label for="cool">Cool</label>
+          </fieldset>
+
+          <!-- create palette button -->
+          <div class="button">
+            <input type="button" value="Create Palette!"/>
+          </div>
+        </form>
+      </div>
+        <section>
+          <ul id="palette-list"></ul>
+        </section>
+      </main>
+  </body>
+  <script src="main.js"></script>
+</html>
