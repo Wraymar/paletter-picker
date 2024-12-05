@@ -2,24 +2,39 @@
 body {
   display: flex;
   justify-content: center;
-  background-color: grey;
+  background-color: rgb(206, 204, 204);
 }
 
 .app {
   border: 2px solid black;
   border-radius: 15px;
-  padding: 20px;
+  padding: 10px;
   background-color: rgb(113, 153, 162);
+  margin-top: 50px;
+  width: 350px;
+  /* box-shadow: 0 6px 10px rgba(0, 0, 0); */
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+/* Header */
+h1 {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0;
+  font-weight: bold;
+  font-size: 2rem;
 }
 
-/* Header */
-
-/* Form Container */
+.sub-heading {
+  margin-top: 0;
+  display: flex;
+  justify-content: center;
+}
 
 /* Colors */
 .colors {
   display: flex;
   justify-content: center;
+  padding: 10px;
 }
 /* Temperature */
 
@@ -29,3 +44,8 @@ body {
   justify-content: center;
 }
 /* Palette List */
+
+/* Fieldset */
+fieldset {
+  border: 0;
+}
