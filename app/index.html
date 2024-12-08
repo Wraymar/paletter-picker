@@ -24,7 +24,7 @@
           <!-- palette title -->
           <div >
             <label for="title">Palette Title:</label>
-            <input type="text" id="title" name="title" placeholder="title name"/>
+            <input type="text" id="title" name="title" placeholder="title name" required/>
           </div>
           <br />
 
@@ -64,7 +64,7 @@
 
           <!-- create palette button -->
           <div class="button">
-            <input type="button" value="Create Palette!"/>
+            <button id="submit-button" type="submit">Create Palette!</button>
           </div>
         </form>
       </div>
@@ -73,5 +73,5 @@
         </section>
       </main>
   </body>
-  <script src="main.js"></script>
+  <script type="module" src="src/main.js"></script>
 </html>
