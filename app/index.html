@@ -20,57 +20,56 @@
       <main>
         <!-- Form -->
         <form aria-labelledby="palette-form" class="form-container">
-
           <!-- palette title -->
-          <div >
+          <div class="palette-title">
             <label for="title">Palette Title:</label>
             <input type="text" id="title" name="title" placeholder="title name" required/>
           </div>
-          <br />
+    
 
           <!-- colors -->
-          <div>
+          <div class="colors-selector">
           
           <div class="colors">
           <label for="color1">Color #1</label>
           <input type="color" id="color1" name="color1" value="#000000"/>
-          <br />
           </div>
           
           <div class="colors">
           <label for="color2">Color #2</label>
           <input type="color" id="color2" name="color2" value="#000000"/>
-          <br />
           </div>
           
           <div class="colors">
           <label for="color3">Color #3</label>
           <input type="color" id="color3" name="color3" value="#000000"/>
           </div>
+
           </div>
 
           <!-- temperature -->
           <fieldset>
             <legend>Temperature</legend>
-            <input type="radio" id="warm" name="temperature" />
+            <input type="radio" id="warm" name="temperature" value="warm" />
             <label for="warm">Warm</label>
 
-            <input type="radio" id="neutral" name="temperature" checked />
+            <input type="radio" id="neutral" name="temperature" value="neutral" checked />
             <label for="neutral">Neutral</label>
 
-            <input type="radio" id="cool" name="temperature" />
+            <input type="radio" id="cool" name="temperature" value="cool" />
             <label for="cool">Cool</label>
           </fieldset>
 
           <!-- create palette button -->
           <div class="button">
-            <button id="submit-button" type="submit">Create Palette!</button>
+            <button id="submit-button" class="create-btn" type="submit">Create Palette!</button>
           </div>
         </form>
       </div>
-        <section>
+      <h2 class="palette-section">Your Palettes</h2>
+      <div>
           <ul id="palette-list"></ul>
-        </section>
+      </div >
       </main>
   </body>
   <script type="module" src="src/main.js"></script>

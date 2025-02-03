@@ -1,6 +1,8 @@
-import "./style.css";
-import {} from "./dom-helpers.js";
-import {} from "./local-storage.js";
+// import "./style.css";
+import { renderPalette } from "./dom-helpers.js";
+// import {} from "./local-storage.js";
+
+const palettesUl = document.querySelector("#palette-list");
 
 // handle form submission
 const handleSubmit = (e) => {
@@ -9,13 +11,10 @@ const handleSubmit = (e) => {
 
   //creating an object of form values
   const formValues = Object.fromEntries(new FormData(form));
+  console.log(formValues);
 
-  //Capturing the form values
-  const title = formValues.title;
-  const color1 = formValues.color1;
-  const color2 = formValues.color2;
-  const color3 = formValues.color3;
-  const temperature = formValues.temperature;
+  //Render the Palette
+  renderPalette(palettesUl, formValues);
 
   //reset the form
   form.reset();
