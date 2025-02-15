@@ -59,6 +59,21 @@ fieldset {
 }
 
 .colorDiv {
+  display: flex;
+  /* justify-content: space-around; */
+}
+
+.previewDiv {
+  background: linear-gradient(to bottom, white 50%, black 50%);
+}
+
+#copyBtn {
+  background-color: #6b6b6b;
+  color: white;
+  border: 1px solid #6c6c6c;
+  padding: 4px 6px;
+  font-size: 17px;
+  text-align: center;
 }
 
 .colors-selector {
@@ -133,99 +148,3 @@ legend {
   text-align: center;
   position: relative;
 }
-
-/* 
-.palette h3 {
-  font-size: 18px;
-  margin-bottom: 25px;
-} */
-
-/* .outer-box {
-  background: linear-gradient(to bottom, white 50%, black 50%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 125px;
-  height: 70px;
-} */
-/* 
-.color-row {
-  display: flex;
-  align-items: center;
-  flex-direction: row;
-  margin-bottom: 15px;
-  margin: 0;
-  padding: 0;
-  gap: 2rem;
-}
-
-.color-box-1,
-.color-box-2,
-.color-box-3 {
-  width: 90%;
-  height: 50px;
-  padding: 10px;
-  text-align: center;
-  font-size: 14px;
-  border: 2px solid black;
-  margin: 1rem;
-}
-
-.color-box-text {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  gap: 5px;
-  margin: 0.5rem;
-}
-
-.first-word {
-  color: #ffffff;
-  margin: 0;
-}
-
-.second-word {
-  color: #000000;
-  margin: 0;
-}
-
-.copy-btn {
-  background-color: #6c6c6c;
-  color: white;
-  border: none;
-  padding: 5px 10px;
-  cursor: pointer;
-  font-size: 12px;
-  text-align: center;
-  width: 100px;
-  height: 40px;
-}
-
-.delete-btn {
-  background-color: #6b6b6b;
-  color: white;
-  border: 1px solid #6c6c6c;
-  padding: 4px 6px;
-  margin-top: 15px;
-  margin-bottom: 40px;
-  cursor: pointer;
-  width: auto;
-  font-size: 12px;
-  height: auto;
-  text-align: center;
-}
-
-.palette-footer {
-  background-color: #5a5a5a;
-  padding: 8px;
-  margin-top: 10px;
-  font-size: 15px;
-  color: white;
-  width: 285px;
-  box-sizing: border-box;
-  text-align: center;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-} */
