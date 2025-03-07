@@ -1,13 +1,7 @@
-export const renderPalette = (paletteDivUl, paletteObj) => {
-  // paletteDivUl.innerHTML = "";
+import { removePaletteById } from "./local-storage";
 
-  const myPalette = {
-    title: paletteObj.title,
-    colors: [paletteObj.color1, paletteObj.color2, paletteObj.color3],
-    temperature: paletteObj.temperature,
-  };
-  //generate random UUID
-  // const newPaletteId = crypto.randomUUID();
+export const renderPalette = (paletteDivUl, paletteObj) => {
+  const myPalette = paletteObj;
 
   //title
   const h3 = document.createElement("h3");
@@ -17,7 +11,6 @@ export const renderPalette = (paletteDivUl, paletteObj) => {
   const createColorDiv = (color) => {
     const colorDiv = document.createElement("div");
     colorDiv.className = "colorDiv";
-    // colorDiv.textContent = color;
 
     const copyBtn = document.createElement("button");
     copyBtn.id = "copyBtn";
@@ -42,6 +35,7 @@ export const renderPalette = (paletteDivUl, paletteObj) => {
 
   //for each color create the color divs
   const paletteColors = myPalette.colors;
+  // console.log(`id: ${myPalette.uuid} ${paletteColors}`);
   paletteColors.forEach((color) => {
     colorsContainer.append(createColorDiv(color));
   });
@@ -50,6 +44,13 @@ export const renderPalette = (paletteDivUl, paletteObj) => {
   const deleteBtn = document.createElement("button");
   deleteBtn.textContent = "delete palette";
   deleteBtn.className = "delete-btn";
+  //listen for a click event on the delete button and then remove the palette from the local storage
+  deleteBtn.addEventListener("click", () => {
+    //removes the palette from the local storage
+    removePaletteById(myPalette.uuid);
+    //removes the palette from the dom
+    document.getElementById(myPalette.uuid).remove();
+  });
 
   //temperature
   const temperatureP = document.createElement("p");
@@ -57,11 +58,24 @@ export const renderPalette = (paletteDivUl, paletteObj) => {
 
   const li = document.createElement("li");
   li.className = "palette";
-  // li.dataset.uuid = crypto.randomUUID(); PROBABLY WON'T WORK
-  li.id = crypto.randomUUID();
+  //li now has the same id as the palette.id/uuid
+  li.id = myPalette.uuid;
 
   li.append(h3, colorsContainer, deleteBtn, temperatureP);
   paletteDivUl.appendChild(li);
 
-  paletteDivUl.addEventListener("click", () => {});
+  //copy the color to the clipboard
+  const copyBtns = document.querySelectorAll("#copyBtn");
+  copyBtns.forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      const text = e.target.previousElementSibling.textContent;
+      navigator.clipboard.writeText(text);
+    });
+  });
+  // copyBtns.forEach((btn) => {
+  //   btn.addEventListener("click", (e) => {
+  //     const text = e.target.previousElementSibling.textContent;
+  //     navigator.clipboard.writeText(text);
+  //   });
+  // });
 };
