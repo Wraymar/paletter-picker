@@ -64,18 +64,34 @@ export const renderPalette = (paletteDivUl, paletteObj) => {
   li.append(h3, colorsContainer, deleteBtn, temperatureP);
   paletteDivUl.appendChild(li);
 
+  //CLIPBOARD API
   //copy the color to the clipboard
+  //selct all the copy buttons
   const copyBtns = document.querySelectorAll("#copyBtn");
   copyBtns.forEach((btn) => {
-    btn.addEventListener("click", (e) => {
-      const text = e.target.previousElementSibling.textContent;
-      navigator.clipboard.writeText(text);
+    //listen for a click event on the copy button
+    btn.addEventListener("click", async (e) => {
+      //if clipboard API not available
+      if (!navigator.clipboard) {
+        console.log("Clipboard API not available");
+        return;
+      }
+      try {
+        //the text inside the button
+        const copyBtntext = btn.innerText;
+        //instead of '#c92929 copy' we only want the hex value '#c92929 so we slice
+        await navigator.clipboard.writeText(e.target.innerText.slice(0, 7));
+        //change the text of the button to copied for a second
+        e.target.textContent = "copied!";
+        console.log();
+        //after a second change the text back to the original
+        setTimeout(() => {
+          e.target.textContent = copyBtntext;
+        }, 1000);
+        //if there's an error then we log the error
+      } catch (err) {
+        console.error("Failed to copy!", err);
+      }
     });
   });
-  // copyBtns.forEach((btn) => {
-  //   btn.addEventListener("click", (e) => {
-  //     const text = e.target.previousElementSibling.textContent;
-  //     navigator.clipboard.writeText(text);
-  //   });
-  // });
 };
