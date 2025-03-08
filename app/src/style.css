@@ -58,11 +58,6 @@ fieldset {
   margin-bottom: 20px;
 }
 
-.colorDiv {
-  display: flex;
-  /* justify-content: space-around; */
-}
-
 .previewDiv {
   background: linear-gradient(to bottom, white 50%, black 50%);
 }
@@ -74,6 +69,11 @@ fieldset {
   padding: 4px 6px;
   font-size: 17px;
   text-align: center;
+}
+
+#copyBtn:hover {
+  background-color: rgb(194, 193, 193);
+  color: #000;
 }
 
 .colors-selector {
@@ -119,9 +119,15 @@ legend {
   text-align: center;
 }
 
+.delete-btn:hover {
+  background-color: rgb(194, 193, 193);
+  color: #000;
+}
+
 .palette-section-header {
   padding: 0px;
   margin-top: 20px;
+  margin-left: 20px;
 }
 
 #palette-list {
@@ -147,4 +153,14 @@ legend {
   color: white;
   text-align: center;
   position: relative;
+}
+
+li {
+  list-style: none;
+}
+
+.colorDiv {
+  display: flex;
+  margin: 0;
+  padding: 0;
 }
